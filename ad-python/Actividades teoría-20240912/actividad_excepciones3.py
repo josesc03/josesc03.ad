@@ -5,7 +5,7 @@ def capitalizar(elem):
     return elem.capitalize()
 
 def formatea(elem):
-    limpio = elem.trim()
+    limpio = elem.strip()
     capitalizado = capitalizar(limpio)
     return capitalizado
 
@@ -18,6 +18,4 @@ def formateador(elementos):
 if __name__ ==  '__main__':
     print(formateador('   Jose   '))
     print(formateador([' pepito ', ' juanita ']))
-    print(formateador(2))
-
 # cuando lo tengas claro haz las correcciones oportunas
