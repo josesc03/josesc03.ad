@@ -22,7 +22,7 @@ def valida_opcion():
         if (opcion not in opciones_validas):
             print("Por favor, vuelve a intentarlo.")
         else:
-            print()       
+            print()
     return opcion
 
 
@@ -59,7 +59,7 @@ def imprimir_vuelo(lista):
     origen = input('Ingrese el origen del vuelo: ')
     destino = input('Ingrese el destino del vuelo: ')
     for index in lista:
-        if index.get('origen') == origen and index.get('destino') == destino:
+        if index.get('origen') == origen.capitalize() and index.get('destino') == destino.capitalize():
             c += 1
             print(f"\n======== Vuelo {c} ========")
             for clave, valor in index.items():
@@ -78,16 +78,15 @@ def cambiar_fecha(lista):
     destino = input('Ingrese el destino del vuelo: ')
     for index in lista:
         c += 1
-        if index.get('origen') == origen and index.get('destino') == destino:
+        if index.get('origen') == origen.capitalize() and index.get('destino') == destino.capitalize():
             exists = True
             nueva_fecha = input('Ingrese la nueva fecha del vuelo: ')
             nuevo_vuelo = lista
             nuevo_vuelo[c]['día'] = nueva_fecha
             return nuevo_vuelo
-    if exists==True:
+    if exists==False:
         print('No existe ningun vuelo con ese origen y destino.')
-        
-        
+        return lista
         
 
 opcion = valida_opcion()
